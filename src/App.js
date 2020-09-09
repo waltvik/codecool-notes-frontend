@@ -1,5 +1,7 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./App.css";
+import WelcomePage from "./pages/WelcomePage";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
@@ -29,31 +31,14 @@ function App() {
   }
 
   return (
-    <div className={darkMode ? "dark-mode" : "light-mode"}>
-      <nav>
-        <div className="toggle-container">
-          <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
-          <span className="toggle">
-            <input
-              checked={darkMode}
-              onChange={() => setDarkMode((prevMode) => !prevMode)}
-              id="checkbox"
-              className="checkbox"
-              type="checkbox"
-            />
-            <label htmlFor="checkbox" />
-          </span>
-          <span style={{ color: darkMode ? "slateblue" : "grey" }}>☾</span>
-          {/* <button onClick={() => setDarkMode(prevMode => !prevMode)}>
-          Toggle
-        </button> */}
-        </div>
-      </nav>
-      <main>
-        <h1>{darkMode ? "Dark Mode" : "Light Mode"}</h1>
-        <h2>Toggle the switch to see some magic happen!</h2>
-      </main>
-    </div>
+    <Router>
+      <div
+        className={darkMode ? "dark-mode" : "light-mode"}
+        style={{ height: "100vh" }}
+      >
+        <Route exact path="/" component={WelcomePage} />
+      </div>
+    </Router>
   );
 }
 
