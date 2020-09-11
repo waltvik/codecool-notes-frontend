@@ -3,13 +3,17 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import WelcomePage from "./pages/welcome/WelcomePage";
 import RegistrationPage from "./pages/registration/RegistrationPage";
-import SettingsPage from "./pages/settings/SettingsPage"
+import SettingsPage from "./pages/settings/SettingsPage";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
   React.useEffect(() => {
     localStorage.setItem("dark", JSON.stringify(darkMode));
   }, [darkMode]);
+
+  function parentFunction(data_from_child) {
+    console.log(data_from_child);
+  }
 
   function getInitialMode() {
     const isReturningUser = "dark" in localStorage;
@@ -40,7 +44,13 @@ function App() {
       >
         <Route exact path="/" component={WelcomePage} />
         <Route exact path="/registration" component={RegistrationPage} />
-        <Route exact path="/settings" component={SettingsPage} />
+        <Route
+          exact
+          path="/settings"
+          component={SettingsPage}
+          mode={darkMode}
+          functionCallFromParent={parentFunction()}
+        />
       </div>
     </Router>
   );

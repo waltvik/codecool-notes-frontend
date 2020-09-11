@@ -2,8 +2,18 @@ import React from "react";
 import Menu from "../../components/Menu";
 import "./settings.css";
 
-const SettingsPage = () => {
+const SettingsPage = (props) => {
   const darkMode = localStorage.getItem("dark");
+  const boolValue = darkMode === "true";
+
+  function childFunction(e) {
+    e.preventDefault();
+    props.functionCallFromParent("Hello From Child1");
+  }
+
+  //   function valami() {
+  //     props.mode == true ? props.mode == false : props.mode == true;
+  //   }
 
   return (
     <div>
@@ -14,8 +24,10 @@ const SettingsPage = () => {
             <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
             <span className="toggle">
               <input
-                checked={darkMode}
-                // onChange={() => setDarkMode((prevMode) => !prevMode)}
+                checked={boolValue}
+                // onChange={() => valami()}
+                onChange={(e) => childFunction(e)}
+                //  onChange={() => setDarkMode((prevMode) => !prevMode)}
                 id="checkbox"
                 className="checkbox"
                 type="checkbox"
