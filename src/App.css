@@ -78,6 +78,14 @@ input {
   color: #de541e;
 }
 
+.dark-mode .secondary-background {
+  background-color: #3e3d3e;
+}
+
+.light-mode .secondary-background {
+  background-color: #a6a4a6;
+}
+
 .toggle {
   position: relative;
   padding: 0 4px;

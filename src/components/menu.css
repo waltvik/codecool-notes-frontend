@@ -1,0 +1,32 @@
+.menu-container {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-radius: 50px;
+  /* background-color: #3e3d3e; */
+  padding: 10px;
+  bottom: 5%;
+  width: 200px;
+  height: 40px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  align-content: space-evenly;
+}
+
+.menu-item {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  background-color: gray;
+  /* margin: 3px; */
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.settings-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}

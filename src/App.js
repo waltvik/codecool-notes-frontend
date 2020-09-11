@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./App.css";
-import WelcomePage from "./pages/WelcomePage";
-import RegistrationPage from "./pages/RegistrationPage";
+import WelcomePage from "./pages/welcome/WelcomePage";
+import RegistrationPage from "./pages/registration/RegistrationPage";
+import SettingsPage from "./pages/settings/SettingsPage"
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
@@ -39,6 +40,7 @@ function App() {
       >
         <Route exact path="/" component={WelcomePage} />
         <Route exact path="/registration" component={RegistrationPage} />
+        <Route exact path="/settings" component={SettingsPage} />
       </div>
     </Router>
   );
