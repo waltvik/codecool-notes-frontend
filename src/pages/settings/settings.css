@@ -1,0 +1,26 @@
+.settings-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  padding-top: 150px;
+  justify-content: center;
+}
+
+.settings-item {
+  border-bottom: solid 1px #a6a4a6;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.toggle-settings-container {
+  display: inline;
+  border-bottom: solid 1px #a6a4a6;
+  margin-bottom: 20px;
+}
+
+.light-mode-settings {
+  float: left;
+  margin-top: 3px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  font-size: 25px;
+}
