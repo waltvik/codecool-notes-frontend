@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import WelcomePage from "./pages/WelcomePage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
@@ -37,6 +38,7 @@ function App() {
         style={{ height: "100vh" }}
       >
         <Route exact path="/" component={WelcomePage} />
+        <Route exact path="/registration" component={RegistrationPage} />
       </div>
     </Router>
   );
