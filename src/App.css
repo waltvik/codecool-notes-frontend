@@ -85,6 +85,42 @@ input {
   align-items: center;
 }
 
+input[type="checkbox"].checkbox {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+}
+
+input[type="checkbox"].checkbox:checked + label {
+  left: 30px;
+}
+
+input[type="checkbox"].checkbox:focus-visible {
+  outline: solid 2px white;
+}
+
+input[type="checkbox"].checkbox + label {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: absolute;
+  left: 2px;
+  background: #fff;
+  opacity: 0.9;
+  background-color: cyan;
+}
+
 .toggle-container {
   display: flex;
   margin: 0 auto;
@@ -102,4 +138,22 @@ input {
 
 .toggle-container > span:last-child {
   margin-top: 5px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #de541e #d7d1cd;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: #d7d1cd;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #de541e;
+  border-radius: 20px;
+  border: none;
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import WelcomePage from "./pages/welcome/WelcomePage";
 import RegistrationPage from "./pages/registration/RegistrationPage";
+import MainPage from "./pages/main/MainPage";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
@@ -37,7 +38,8 @@ function App() {
         className={darkMode ? "dark-mode" : "light-mode"}
         style={{ height: "100vh" }}
       >
-        <Route exact path="/" component={WelcomePage} />
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/welcome" component={WelcomePage} />
         <Route exact path="/registration" component={RegistrationPage} />
       </div>
     </Router>
