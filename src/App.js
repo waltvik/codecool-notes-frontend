@@ -11,8 +11,9 @@ function App() {
     localStorage.setItem("dark", JSON.stringify(darkMode));
   }, [darkMode]);
 
-  function parentFunction(data_from_child) {
-    console.log(data_from_child);
+  function handleChange(newValue) {
+    console.log(newValue);
+    setDarkMode(newValue);
   }
 
   function getInitialMode() {
@@ -48,8 +49,8 @@ function App() {
           exact
           path="/settings"
           component={SettingsPage}
-          mode={darkMode}
-          functionCallFromParent={parentFunction()}
+          // darkMode={darkMode}
+          // onChange={handleChange}
         />
       </div>
     </Router>

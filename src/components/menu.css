@@ -24,9 +24,46 @@
   margin: 0 auto;
   text-align: center;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
-.settings-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+.menu-item:hover {
+  background-color: #de541e;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu-container {
+    position: fixed;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    padding: 10px;
+    bottom: 5%;
+    width: 70px;
+    height: 400px;
+    margin: auto;
+    margin-left: -10px;
+    /* margin-top: 60px; */
+    bottom: 0;
+    top: 0;
+
+    opacity: 1;
+  }
+
+  .menu-item {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: gray;
+    /* margin: 3px; */
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+  }
 }

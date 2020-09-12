@@ -1,15 +1,21 @@
 import React from "react";
 import Menu from "../../components/Menu";
 import "./settings.css";
+import SettingsHeader from "./SettingsHeader";
 
 const SettingsPage = (props) => {
   const darkMode = localStorage.getItem("dark");
   const boolValue = darkMode === "true";
 
-  function childFunction(e) {
-    e.preventDefault();
-    props.functionCallFromParent("Hello From Child1");
-  }
+  //   function handleChange(event) {
+  //     // Here, we invoke the callback with the new value
+  //     if (props.value == true) {
+  //       props.onChange(false);
+  //     } else {
+  //       props.onChange(true);
+  //     }
+  //     // props.onChange(event.target.value);
+  //   }
 
   //   function valami() {
   //     props.mode == true ? props.mode == false : props.mode == true;
@@ -17,6 +23,7 @@ const SettingsPage = (props) => {
 
   return (
     <div>
+      <SettingsHeader urlToAvatar="https://www.pexels.com/hu-hu/foto/allat-aranyos-bajusz-belfoldi-1314550/" />
       <div className="settings-container">
         <div className="toggle-settings-container">
           <span className="light-mode-settings">Light/dark mode</span>
@@ -24,9 +31,9 @@ const SettingsPage = (props) => {
             <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
             <span className="toggle">
               <input
-                checked={boolValue}
+                defaultChecked={darkMode}
                 // onChange={() => valami()}
-                onChange={(e) => childFunction(e)}
+                // onChange={handleChange}
                 //  onChange={() => setDarkMode((prevMode) => !prevMode)}
                 id="checkbox"
                 className="checkbox"
