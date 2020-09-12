@@ -3,7 +3,7 @@ import "./main.css";
 import NoteCard from "../../components/notecard/NoteCard";
 import ModuleBar from "../../components/module/ModuleBar";
 
-const MainPage = ({ setter }) => {
+const MainPage = () => {
   return (
     <div style={{ width: "100%", height: "100%" }} className="main-page">
       <ModuleBar />

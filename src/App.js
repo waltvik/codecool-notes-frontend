@@ -4,6 +4,8 @@ import "./App.css";
 import WelcomePage from "./pages/welcome/WelcomePage";
 import RegistrationPage from "./pages/registration/RegistrationPage";
 import MainPage from "./pages/main/MainPage";
+import ModuleBar from "./components/module/ModuleBar";
+import ModulePage from "./pages/module/ModulePage";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
@@ -39,11 +41,11 @@ function App() {
         style={{ height: "100vh" }}
       >
         <Route exact path="/" component={MainPage} />
-        <Route exact path="/progbasics" component={MainPage} />
-        <Route exact path="/web" component={MainPage} />
-        <Route exact path="/oop" component={MainPage} />
-        <Route exact path="/advanced" component={MainPage} />
-        <Route exact path="/jobhunt" component={MainPage} />
+        <Route exact path="/progbasics" component={ModulePage} />
+        <Route exact path="/web" component={ModulePage} />
+        <Route exact path="/oop" component={ModulePage} />
+        <Route exact path="/advanced" component={ModulePage} />
+        <Route exact path="/jobhunt" component={ModulePage} />
         <Route exact path="/welcome" component={WelcomePage} />
         <Route exact path="/registration" component={RegistrationPage} />
       </div>

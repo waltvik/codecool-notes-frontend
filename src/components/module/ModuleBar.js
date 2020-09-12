@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const ModuleBar = (props) => {
   var str = window.location.href;
-  var res = str.replace("http://localhost:3000/", "");
 
   return (
     <div className="slide-wrapper">
@@ -12,7 +11,9 @@ const ModuleBar = (props) => {
         <div className="menu-item-wrapper">
           <Link
             className={
-              res === "progbasics" ? "menu-item primary-color" : "menu-item "
+              str.includes("progbasics")
+                ? "menu-item primary-color"
+                : "menu-item "
             }
             to="/progbasics"
           >
@@ -22,7 +23,9 @@ const ModuleBar = (props) => {
         </div>
         <div className="menu-item-wrapper">
           <Link
-            className={`menu-item  ${res === "web" ? "primary-color" : ""}`}
+            className={`menu-item  ${
+              str.includes("web") ? "primary-color" : ""
+            }`}
             to="/web"
           >
             web
@@ -31,7 +34,9 @@ const ModuleBar = (props) => {
         </div>
         <div className="menu-item-wrapper">
           <Link
-            className={`menu-item  ${res === "oop" ? "primary-color" : ""}`}
+            className={`menu-item  ${
+              str.includes("oop") ? "primary-color" : ""
+            }`}
             to="/oop"
           >
             OOP
@@ -41,7 +46,7 @@ const ModuleBar = (props) => {
         <div className="menu-item-wrapper">
           <Link
             className={`menu-item  ${
-              res === "advanced" ? "primary-color" : ""
+              str.includes("advanced") ? "primary-color" : ""
             }`}
             to="/advanced"
           >
@@ -51,7 +56,9 @@ const ModuleBar = (props) => {
         </div>
         <div className="menu-item-wrapper">
           <Link
-            className={`menu-item  ${res === "jobhunt" ? "primary-color" : ""}`}
+            className={`menu-item  ${
+              str.includes("jobhunt") ? "primary-color" : ""
+            }`}
             to="/jobhunt"
           >
             jobhunt
