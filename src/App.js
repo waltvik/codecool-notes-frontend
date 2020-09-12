@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import WelcomePage from "./pages/welcome/WelcomePage";
 import RegistrationPage from "./pages/registration/RegistrationPage";
@@ -39,6 +39,11 @@ function App() {
         style={{ height: "100vh" }}
       >
         <Route exact path="/" component={MainPage} />
+        <Route exact path="/progbasics" component={MainPage} />
+        <Route exact path="/web" component={MainPage} />
+        <Route exact path="/oop" component={MainPage} />
+        <Route exact path="/advanced" component={MainPage} />
+        <Route exact path="/jobhunt" component={MainPage} />
         <Route exact path="/welcome" component={WelcomePage} />
         <Route exact path="/registration" component={RegistrationPage} />
       </div>

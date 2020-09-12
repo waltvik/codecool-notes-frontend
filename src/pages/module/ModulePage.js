@@ -3,9 +3,9 @@ import "./main.css";
 import NoteCard from "../../components/notecard/NoteCard";
 import ModuleBar from "../../components/module/ModuleBar";
 
-const MainPage = ({ setter }) => {
+const ModulePage = () => {
   return (
-    <div style={{ width: "100%", height: "100%" }} className="main-page">
+    <div style={{ width: "100%", height: "100%" }} className="module-page">
       <ModuleBar />
       <div className="note-card-wrapper">
         <NoteCard></NoteCard>
@@ -24,4 +24,4 @@ const MainPage = ({ setter }) => {
   );
 };
 
-export default MainPage;
+export default ModulePage;
