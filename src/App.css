@@ -147,3 +147,21 @@ input[type="checkbox"].checkbox + label {
 .toggle-container > span:last-child {
   margin-top: 5px;
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #de541e #d7d1cd;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: #d7d1cd;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #de541e;
+  border-radius: 20px;
+  border: none;
+}

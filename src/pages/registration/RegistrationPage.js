@@ -1,42 +1,17 @@
 import React from "react";
+import "./registration.css";
 
 const RegistrationPage = () => {
   return (
     <div style={{ width: "100%", height: "100%" }} className="welcome-page">
-      <div>
-        <div
-          style={{
-            fontSize: "45px",
-            fontWeight: "bold",
-            textAlign: "right",
-            paddingRight: "5px",
-            textTransform: "uppercase",
-            paddingTop: "3em",
-          }}
-        >
-          <div className="secondary-color">registration</div>
-          <div className="primary-color">here</div>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateRows: "1fr 1fr",
-            marginTop: "20%",
-            marginBottom: "1em",
-          }}
-        >
+      <div className="reg-title">
+        <div className="secondary-color">registration</div>
+        <div className="primary-color">here</div>
+      </div>
+      <div className="reg-container">
+        <div className="reg-form">
           <input
             className="primary-color"
-            style={{
-              borderStyle: "none",
-              paddingLeft: "20px",
-              paddingBottom: "4px",
-              backgroundColor: "transparent",
-              marginBottom: "30px",
-              borderBottom: "solid 1px #A6A4A6",
-              marginLeft: "20px",
-              marginRight: "20px",
-            }}
             type="username"
             id="inputUsername"
             placeholder="USERNAME"
@@ -45,16 +20,6 @@ const RegistrationPage = () => {
           />
           <input
             className="primary-color"
-            style={{
-              borderStyle: "none",
-              paddingLeft: "20px",
-              paddingBottom: "4px",
-              backgroundColor: "transparent",
-              marginBottom: "30px",
-              borderBottom: "solid 1px #A6A4A6",
-              marginLeft: "20px",
-              marginRight: "20px",
-            }}
             type="password"
             id="inputPassword"
             placeholder="PASSWORD"
@@ -63,16 +28,6 @@ const RegistrationPage = () => {
           />
           <input
             className="primary-color"
-            style={{
-              borderStyle: "none",
-              paddingLeft: "20px",
-              paddingBottom: "4px",
-              backgroundColor: "transparent",
-              marginBottom: "30px",
-              borderBottom: "solid 1px #A6A4A6",
-              marginLeft: "20px",
-              marginRight: "20px",
-            }}
             type="password"
             id="inputRepeatPassword"
             placeholder="REPEAT PASSWORD"
@@ -81,16 +36,6 @@ const RegistrationPage = () => {
           />
           <input
             className="primary-color"
-            style={{
-              borderStyle: "none",
-              paddingLeft: "20px",
-              paddingBottom: "4px",
-              backgroundColor: "transparent",
-              marginBottom: "30px",
-              borderBottom: "solid 1px #A6A4A6",
-              marginLeft: "20px",
-              marginRight: "20px",
-            }}
             type="e-mail"
             id="inputEmail"
             placeholder="E-MAIL"
