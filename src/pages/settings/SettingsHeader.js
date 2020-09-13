@@ -16,15 +16,10 @@ const Header = (props) => {
 
   return (
     <div className="header">
-      {/* <ArrowLeftOutlined onClick={goBack} className="header-back" /> */}
       <button onClick={goBack} className="header-arrow-container">
-        <LeftOutlined onClick={goBack} className="header-back" />
+        <LeftOutlined className="header-back" />
         <div className="header-arrow-text">back</div>
       </button>
-      {/* <div className="header-arrow-container">
-        <LeftOutlined onClick={goBack} className="header-back" />
-        <div className="header-arrow-text">back</div>
-      </div> */}
 
       <img alt="" src={props.urlToAvatar} className="header-avatar"></img>
     </div>
