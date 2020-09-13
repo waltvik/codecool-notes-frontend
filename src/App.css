@@ -9,7 +9,7 @@ body {
   width: 100%;
 }
 
-button {
+.form-button {
   outline: none;
 }
 
@@ -25,11 +25,11 @@ input {
   transition: background-color 0.25s ease-out;
 }
 
-.light-mode button {
+.light-mode .form-button {
   background-color: #d7d1cd;
 }
 
-.light-mode button:hover {
+.light-mode .form-button:hover {
   background-color: #de541e;
 }
 
@@ -52,7 +52,7 @@ input {
   color: #3e3d3e;
 }
 
-.dark-mode button {
+.dark-mode .form-button {
   background-color: #615e61;
 }
 
@@ -60,7 +60,7 @@ input {
   color: #de541e;
 }
 
-.dark-mode button:hover {
+.dark-mode .form-button:hover {
   background-color: #de541e;
 }
 

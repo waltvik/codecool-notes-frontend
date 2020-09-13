@@ -55,6 +55,7 @@ const RegistrationPage = () => {
           </label>
 
           <button
+            className="form-button"
             style={{
               borderStyle: "none",
               margin: "20px",

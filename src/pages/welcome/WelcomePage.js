@@ -34,7 +34,7 @@ const WelcomePage = () => {
             required
             autoFocus
           />
-          <button>log in</button>
+          <button className="form-button">log in</button>
         </div>
 
         <div className="secondary-color-light welcome-signup">
