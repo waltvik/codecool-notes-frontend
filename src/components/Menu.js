@@ -20,28 +20,23 @@ const Menu = () => {
 
   return (
     <div className="menu-container secondary-background">
-      {/* <button onClick={goBack} className="menu-item menu-goback"> */}
       <LeftOutlined
         onClick={goBack}
-        className="menu-item menu-back menu-goback"
+        className="menu-subitem menu-back menu-goback"
       />
-      {/* </button> */}
-      <Link to="#" className="menu-item">
+
+      <Link to="#" className="menu-subitem">
         <FireOutlined twoToneColor="#eb2f96" />
       </Link>
-      <Link to="#" className="menu-item">
+      <Link to="#" className="menu-subitem">
         <PlusOutlined />
       </Link>
-      <Link to="#" className="menu-item">
+      <Link to="#" className="menu-subitem">
         <SearchOutlined />
       </Link>
-      <Link to="#" className="menu-item">
+      <Link to="#" className="menu-subitem">
         <HomeOutlined />
       </Link>
-      {/* <div className="menu-item">T</div>
-      <div className="menu-item">+</div>
-      <div className="menu-item">S</div>
-      <div className="menu-item">H</div> */}
     </div>
   );
 };
