@@ -4,7 +4,7 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .note-card-wrapper {
+  .note-card-wrapper-main {
     margin: 0 auto;
   }
 }
@@ -22,13 +22,13 @@
     overflow-x: hidden;
   }
 
-  .note-card-wrapper {
+  .note-card-wrapper-main {
     margin: 0 0 0 70px;
     width: 900px;
     grid-column: 2;
   }
 
-  .note-card-wrapper {
+  .note-card-wrapper-main {
     height: 100vh;
     overflow: auto;
   }

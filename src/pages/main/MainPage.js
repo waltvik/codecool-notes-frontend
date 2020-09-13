@@ -7,7 +7,7 @@ const MainPage = () => {
   return (
     <div style={{ width: "100%", height: "100%" }} className="main-page">
       <ModuleBar />
-      <div className="note-card-wrapper">
+      <div className="note-card-wrapper-main">
         <NoteCard></NoteCard>
         <NoteCard></NoteCard>
         <NoteCard></NoteCard>
