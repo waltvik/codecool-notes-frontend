@@ -2,6 +2,14 @@
   color: #de541e;
 }
 
+.dark-mode .menu-item {
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  color: #8b8b8b;
+}
+
 .menu-item {
   display: inline-block;
   text-align: center;
@@ -62,6 +70,13 @@
     height: 100%;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
+  }
+
+  .dark-mode .content-wrapper div {
+    color: rgb(70, 70, 70);
+    background-color: unset;
+    font-size: 90px;
+    font-weight: bold;
   }
 
   .content-wrapper div {

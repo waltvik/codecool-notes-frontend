@@ -33,7 +33,7 @@ const SettingsPage = (props) => {
       className={darkMode ? "dark-mode" : "light-mode"}
     >
       <SettingsHeader urlToAvatar="https://www.pexels.com/hu-hu/foto/allat-aranyos-bajusz-belfoldi-1314550/" />
-      <div className="settings-container">
+      <div className=" settings-container">
         <div className="toggle-settings-container">
           <span className="light-mode-settings">Light/dark mode</span>
           <span className="toggle-container">

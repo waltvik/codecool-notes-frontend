@@ -1,3 +1,13 @@
+.dark-mode .card-wrapper {
+  height: fit-content;
+  background-color: #53504e;
+  color: #d7d1cd;
+  margin: 5px 10px 20px 10px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  box-shadow: 0px 4px 8px -2px #272727;
+}
+
 .card-wrapper {
   height: fit-content;
   background-color: #d7d1cd;
