@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./welcome.css";
+import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 
 const WelcomePage = () => {
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  let history = useHistory();
+
+  useEffect(() => {}, []);
+
+  const onLogin = () => {
+    axios({
+      method: "post",
+      url: `http://localhost:8762/auth/login`,
+      data: {
+        username: username,
+        password: password,
+      },
+      withCredentials: true,
+    })
+      .then(function (response) {
+        if (response.data.userid > 0) {
+          history.push("/");
+        }
+
+        //handle success
+        console.log("ezazzzz");
+        console.log(response.data);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+  };
+
   return (
     <div style={{ width: "100%", height: "100%" }} className="welcome-page">
       <div className="welcome-title-container">
@@ -25,6 +58,7 @@ const WelcomePage = () => {
             placeholder="USERNAME"
             required
             autoFocus
+            onChange={(event) => setUserName(event.target.value)}
           />
           <input
             className="primary-color"
@@ -33,8 +67,9 @@ const WelcomePage = () => {
             placeholder="PASSWORD"
             required
             autoFocus
+            onChange={(event) => setPassword(event.target.value)}
           />
-          <button>log in</button>
+          <button onClick={() => onLogin()}>log in</button>
         </div>
 
         <div className="secondary-color-light welcome-signup">

@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./registration.css";
+import axios from "axios";
 
 const RegistrationPage = () => {
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {}, []);
+
+  const onRegistration = () => {
+    axios({
+      method: "post",
+      url: `http://localhost:8762/user-service/user/registration`,
+      data: {
+        username: username,
+        password: password,
+        email: email,
+      },
+    })
+      .then(function (response) {
+        //handle success
+        console.log("ezazzzz");
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+  };
+
   return (
     <div style={{ width: "100%", height: "100%" }} className="welcome-page">
       <div className="reg-title">
@@ -17,6 +44,7 @@ const RegistrationPage = () => {
             placeholder="USERNAME"
             required
             autoFocus
+            onChange={(event) => setUserName(event.target.value)}
           />
           <input
             className="primary-color"
@@ -33,6 +61,7 @@ const RegistrationPage = () => {
             placeholder="REPEAT PASSWORD"
             required
             autoFocus
+            onChange={(event) => setPassword(event.target.value)}
           />
           <input
             className="primary-color"
@@ -41,6 +70,7 @@ const RegistrationPage = () => {
             placeholder="E-MAIL"
             required
             autoFocus
+            onChange={(event) => setEmail(event.target.value)}
           />
           <label
             style={{ marginLeft: "20px" }}
@@ -63,6 +93,7 @@ const RegistrationPage = () => {
               textTransform: "uppercase",
               letterSpacing: "2px",
             }}
+            onClick={() => onRegistration()}
           >
             log in
           </button>

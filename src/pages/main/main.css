@@ -17,7 +17,7 @@
 @media only screen and (min-width: 1200px) {
   .main-page {
     display: grid;
-    grid-template-columns: 100px fit-content auto;
+    grid-template-columns: 110px fit-content auto;
     height: 100vh;
     overflow-x: hidden;
   }

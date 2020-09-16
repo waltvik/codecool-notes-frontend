@@ -2,6 +2,7 @@ import React from "react";
 import "./modulepage.css";
 import NoteCard from "../../components/notecard/NoteCard";
 import ModuleBar from "../../components/module/ModuleBar";
+import Menu from "../../components/Menu";
 
 const ModulePage = () => {
   // TODO: get module notes from back-end
@@ -13,6 +14,7 @@ const ModulePage = () => {
 
   return (
     <div style={{ width: "100%", height: "100%" }} className="module-page">
+      <Menu />
       <ModuleBar />
       <div className="module-filters">
         <div className="module-page-title-wrapper">
