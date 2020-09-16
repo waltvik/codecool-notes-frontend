@@ -57,7 +57,7 @@
   border-bottom: solid 2px #de541e;
 }
 
-.note-card-wrapper {
+.note-card-wrapper-user {
   height: 100%;
   overflow: auto;
 }
@@ -75,6 +75,15 @@
     width: 30%;
     transition: 0.5s;
   }
+
+  .note-card-wrapper-user {
+    grid-row: 2;
+    grid-column: 2;
+    height: 100%;
+    overflow: auto;
+    width: 90%;
+    margin-left: 80px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -84,7 +93,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .note-card-wrapper {
+  .note-card-wrapper-user {
     grid-row: 2;
     grid-column: 2;
     height: 100%;

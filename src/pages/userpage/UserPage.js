@@ -31,7 +31,7 @@ const UserPage = () => {
         <SearchOutlined className="search-icon" />
       </div>
       <div className="user-page-sub-title">My notes:</div>
-      <div className="note-card-wrapper">
+      <div className="note-card-wrapper-user">
         <NoteCard></NoteCard>
         <NoteCard></NoteCard>
         <NoteCard></NoteCard>
