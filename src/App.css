@@ -79,11 +79,11 @@ input {
 }
 
 .dark-mode .secondary-background {
-  background-color: #3e3d3e;
+  background-color: #747474;
 }
 
 .light-mode .secondary-background {
-  background-color: #a6a4a6;
+  background-color: #b9b2ae;
 }
 
 .toggle {
@@ -153,10 +153,20 @@ input[type="checkbox"].checkbox + label {
   scrollbar-color: #de541e #d7d1cd;
 }
 
+.dark-mode * {
+  scrollbar-width: thin;
+  scrollbar-color: #de541e #686562;
+}
+
 /* Works on Chrome/Edge/Safari */
 *::-webkit-scrollbar {
   width: 8px;
 }
+
+.dark-mode *::-webkit-scrollbar-track {
+  background: #686562;
+}
+
 *::-webkit-scrollbar-track {
   background: #d7d1cd;
 }

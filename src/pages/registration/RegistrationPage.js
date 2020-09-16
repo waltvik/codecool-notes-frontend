@@ -2,8 +2,36 @@ import React from "react";
 import "./registration.css";
 
 const RegistrationPage = () => {
+  const [darkMode, setDarkMode] = React.useState(getInitialMode());
+  React.useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function getInitialMode() {
+    const isReturningUser = "dark" in localStorage;
+    const savedMode = JSON.parse(localStorage.getItem("dark"));
+    const userPrefersDark = getPrefColorScheme();
+
+    if (isReturningUser) {
+      return savedMode;
+    } else if (userPrefersDark) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function getPrefColorScheme() {
+    if (!window.matchMedia) return;
+  }
+
   return (
-    <div style={{ width: "100%", height: "100%" }} className="welcome-page">
+    <div
+      style={{ width: "100%", height: "100%" }}
+      className={
+        darkMode ? "dark-mode welcome-page" : "light-mode welcome-page"
+      }
+    >
       <div className="reg-title">
         <div className="secondary-color">registration</div>
         <div className="primary-color">here</div>

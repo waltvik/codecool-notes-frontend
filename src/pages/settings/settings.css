@@ -2,8 +2,26 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   width: 100%;
-  padding-top: 130px;
+  padding-top: 50px;
   justify-content: center;
+}
+
+.setting-page-avatar {
+  width: min-content;
+  margin: 0 auto;
+}
+
+.setting-page-avatar .avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.dark-mode .settings-item {
+  color: #c4bec4;
+}
+
+.dark-mode .secondary-background {
+  background-color: #747474;
 }
 
 .settings-item {
@@ -23,6 +41,10 @@
   padding-right: 20px;
   padding-bottom: 10px;
   font-size: 25px;
+}
+
+.dark-mode .light-mode-settings {
+  color: #c4bec4;
 }
 
 .header-avatar {
@@ -45,11 +67,21 @@
   flex-direction: row;
   padding: 20px;
   border: none;
-  background-color: black;
+  background-color: transparent;
 }
 
 .header-arrow-text {
-  font-size: 23px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  color: #333;
+}
+
+.dark-mode .header-arrow-text {
+  color: #c4bec4;
+}
+
+.dark-mode .header-back {
+  color: #c4bec4;
 }
 
 @media only screen and (min-width: 768px) {

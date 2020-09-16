@@ -6,6 +6,7 @@ import RegistrationPage from "./pages/registration/RegistrationPage";
 import SettingsPage from "./pages/settings/SettingsPage";
 import MainPage from "./pages/main/MainPage";
 import ModulePage from "./pages/module/ModulePage";
+import UserPage from "./pages/userpage/UserPage";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/welcome" component={WelcomePage} />
         <Route exact path="/registration" component={RegistrationPage} />
         <Route exact path="/settings" component={SettingsPage} />
+        <Route exact path="/user-page" component={UserPage} />
       </div>
     </Router>
   );

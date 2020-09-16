@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./notecard.css";
 import ReactPlayer from "react-player";
 
 const NoteCard = (props) => {
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("dark"))
+  );
+
   return (
-    <div className="card-wrapper">
+    <div
+      className={
+        darkMode ? "dark-mode card-wrapper" : "light-mode card-wrapper"
+      }
+    >
       <div className="card-title">note title</div>
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti

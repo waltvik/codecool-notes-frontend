@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "../../components/Menu";
 import "./settings.css";
 import SettingsHeader from "./SettingsHeader";
+import Avatar from "../../components/avatar/Avatar";
 
 const SettingsPage = (props) => {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
@@ -33,11 +34,15 @@ const SettingsPage = (props) => {
       className={darkMode ? "dark-mode" : "light-mode"}
     >
       <SettingsHeader urlToAvatar="https://www.pexels.com/hu-hu/foto/allat-aranyos-bajusz-belfoldi-1314550/" />
+      <div className="setting-page-avatar">
+        <Avatar />
+      </div>
+
       <div className=" settings-container">
         <div className="toggle-settings-container">
           <span className="light-mode-settings">Light/dark mode</span>
           <span className="toggle-container">
-            <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
+            <span style={{ color: darkMode ? "grey" : "yellow" }}>☀</span>
             <span className="toggle">
               <input
                 checked={darkMode}
@@ -48,7 +53,7 @@ const SettingsPage = (props) => {
               />
               <label htmlFor="checkbox" />
             </span>
-            <span style={{ color: darkMode ? "slateblue" : "grey" }}>☾</span>
+            <span style={{ color: darkMode ? "yellow" : "grey" }}>☾</span>
           </span>
         </div>
 

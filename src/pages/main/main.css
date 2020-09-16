@@ -1,23 +1,64 @@
+.dark-mode .main-page-title {
+  color: #cfcfcf;
+}
+
+.light-mode .main-page-title {
+  color: #6e6e6e;
+}
+
+.main-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content auto;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-page-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 2px #de541e;
+}
+
+.note-card-wrapper-main {
+  height: 100%;
+  overflow: auto;
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .main-page-title {
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    height: unset;
+  }
+
   .note-card-wrapper-main {
-    margin: 0 auto;
+    margin: 0 auto 0 80px;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .main-page-title {
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .main-page {
     display: grid;
-    grid-template-columns: 100px fit-content auto;
+    grid-template-columns: 80px min-content auto;
+    grid-template-rows: 10vh 90vh;
     height: 100vh;
     overflow-x: hidden;
   }
@@ -26,10 +67,17 @@
     margin: 0 0 0 70px;
     width: 900px;
     grid-column: 2;
+    grid-row: 2;
+    height: 100%;
+    overflow: auto;
+    margin: 0;
   }
 
-  .note-card-wrapper-main {
-    height: 100vh;
-    overflow: auto;
+  .main-page-title {
+    grid-row: 1;
+    grid-column: 1/3;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
   }
 }

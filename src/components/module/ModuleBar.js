@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./modulebar.css";
 import { Link } from "react-router-dom";
 
 const ModuleBar = (props) => {
   var str = window.location.href;
-
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("dark"))
+  );
   return (
-    <div className="slide-wrapper">
+    <div
+      className={
+        darkMode ? "dark-mode slide-wrapper" : "light-mode slide-wrapper"
+      }
+    >
       <div className="content-wrapper slide">
         <div className="menu-item-wrapper">
           <Link
             className={
-              str.includes("progbasics")
-                ? "menu-item primary-color"
-                : "menu-item "
+              str.includes("progbasics") ? "menu-item-active" : "menu-item "
             }
             to="/progbasics"
           >
@@ -23,9 +27,7 @@ const ModuleBar = (props) => {
         </div>
         <div className="menu-item-wrapper">
           <Link
-            className={`menu-item  ${
-              str.includes("web") ? "primary-color" : ""
-            }`}
+            className={str.includes("web") ? "menu-item-active" : "menu-item "}
             to="/web"
           >
             web
@@ -34,9 +36,7 @@ const ModuleBar = (props) => {
         </div>
         <div className="menu-item-wrapper">
           <Link
-            className={`menu-item  ${
-              str.includes("oop") ? "primary-color" : ""
-            }`}
+            className={str.includes("oop") ? "menu-item-active" : "menu-item "}
             to="/oop"
           >
             OOP
@@ -45,9 +45,9 @@ const ModuleBar = (props) => {
         </div>
         <div className="menu-item-wrapper">
           <Link
-            className={`menu-item  ${
-              str.includes("advanced") ? "primary-color" : ""
-            }`}
+            className={
+              str.includes("advanced") ? "menu-item-active" : "menu-item "
+            }
             to="/advanced"
           >
             advanced
@@ -56,9 +56,9 @@ const ModuleBar = (props) => {
         </div>
         <div className="menu-item-wrapper">
           <Link
-            className={`menu-item  ${
-              str.includes("jobhunt") ? "primary-color" : ""
-            }`}
+            className={
+              str.includes("jobhunt") ? "menu-item-active" : "menu-item "
+            }
             to="/jobhunt"
           >
             jobhunt

@@ -3,11 +3,19 @@
 }
 
 .dark-mode .menu-item {
+  color: #d7d1cd;
+}
+
+.light-mode .menu-item {
+  color: #3e3d3e;
+}
+
+.menu-item-active {
+  color: #de541e;
   display: inline-block;
   text-align: center;
   padding: 14px;
   text-decoration: none;
-  color: #8b8b8b;
 }
 
 .menu-item {
@@ -15,7 +23,10 @@
   text-align: center;
   padding: 14px;
   text-decoration: none;
-  color: #3e3d3e;
+}
+
+.dark-mode.menu-item:focus {
+  color: #de541e;
 }
 
 .menu-item:focus {
@@ -38,11 +49,20 @@
 .slide {
   padding-bottom: 30px;
 }
+
+.dark-mode .slide-wrapper {
+  background-color: #53504e;
+}
+
+.light-mode .slide-wrapper {
+  background-color: #d7d1cd;
+}
+
 .slide-wrapper {
   height: 50px;
   overflow-y: hidden;
   width: 100%;
-  background-color: #d7d1cd;
+  margin-bottom: 5px;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -51,8 +71,10 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .note-card-wrapper {
-    margin: 0 auto;
+  .slide-wrapper {
+    margin-left: 90px;
+    margin-right: 10px;
+    width: auto;
   }
 }
 
@@ -74,13 +96,13 @@
 
   .dark-mode .content-wrapper div {
     color: rgb(70, 70, 70);
-    background-color: unset;
-    font-size: 90px;
-    font-weight: bold;
+  }
+
+  .light-mode .content-wrapper div {
+    color: rgb(212, 212, 212);
   }
 
   .content-wrapper div {
-    color: rgb(212, 212, 212);
     background-color: unset;
     font-size: 90px;
     font-weight: bold;
@@ -89,12 +111,21 @@
   .slide {
     padding-bottom: 30px;
   }
+
+  .dark-mode .slide-wrapper {
+    background-color: transparent;
+  }
+
+  .light-mode .slide-wrapper {
+    background-color: transparent;
+  }
+
   .slide-wrapper {
     height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
     width: 100%;
-    background-color: transparent;
+    margin: 0 0 0 5px;
     grid-column: 3;
     grid-row: 1;
   }
@@ -105,6 +136,15 @@
     margin-bottom: 0;
     position: absolute;
     bottom: 0;
+  }
+
+  .menu-item-active {
+    text-align: left;
+    font-size: 35px;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    color: #de541e;
   }
 
   .menu-item:hover {
