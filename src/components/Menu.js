@@ -3,6 +3,7 @@ import "./menu.css";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import Modal from "react-modal";
 import {
   PlusOutlined,
   LeftOutlined,
@@ -11,11 +12,27 @@ import {
   FireOutlined,
 } from "@ant-design/icons";
 
+Modal.setAppElement("#root");
+
 const Menu = () => {
   let history = useHistory();
 
   function goBack() {
     history.goBack();
+  }
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    //subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
   }
 
   return (
@@ -28,9 +45,18 @@ const Menu = () => {
       <Link to="#" className="menu-subitem">
         <FireOutlined twoToneColor="#eb2f96" />
       </Link>
-      <Link to="#" className="menu-subitem">
+      <button onClick={openModal} className="menu-subitem">
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          contentLabel="Example Modal"
+        >
+          <button onClick={closeModal}>X</button>
+          <div>I am a modal</div>
+        </Modal>
         <PlusOutlined />
-      </Link>
+      </button>
       <Link to="#" className="menu-subitem">
         <SearchOutlined />
       </Link>
