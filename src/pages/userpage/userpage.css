@@ -1,0 +1,104 @@
+.user-page {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.user-page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-page-setting {
+  font-size: 40px;
+  margin: 20px;
+  color: #333;
+}
+
+.dark-mode .user-page-setting {
+  font-size: 40px;
+  margin: 20px;
+  color: #ada7ad;
+}
+
+.searchbar {
+  height: 40px;
+  background-color: white;
+  width: 200px;
+  margin: 10px;
+  border-radius: 40px;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+
+.dark-mode .searchbar {
+  background-color: #1f1e1e;
+}
+
+.searchbar:focus {
+  height: 50px;
+  width: 80%;
+  transition: 0.5s;
+}
+
+.search-icon {
+  font-size: 25px;
+  vertical-align: middle;
+  transition: 0.5s;
+}
+
+.dark-mode .search-icon {
+  color: #c4bec4;
+}
+
+.user-page-sub-title {
+  font-size: 40px;
+  margin: 20px;
+  border-bottom: solid 2px #de541e;
+}
+
+.note-card-wrapper-user {
+  height: 100%;
+  overflow: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .user-page-sub-title {
+    margin: 20px 20px 20px 90px;
+  }
+  .searchbar {
+    height: 35px;
+  }
+
+  .searchbar:focus {
+    height: 40px;
+    width: 30%;
+    transition: 0.5s;
+  }
+
+  .note-card-wrapper-user {
+    grid-row: 2;
+    grid-column: 2;
+    height: 100%;
+    overflow: auto;
+    width: 90%;
+    margin-left: 80px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .search-wrapper {
+    margin-left: 80px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .note-card-wrapper-user {
+    grid-row: 2;
+    grid-column: 2;
+    height: 100%;
+    overflow: auto;
+    width: 90%;
+    margin-left: 80px;
+  }
+}

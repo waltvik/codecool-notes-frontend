@@ -2,49 +2,58 @@ import React from "react";
 import Menu from "../../components/Menu";
 import "./settings.css";
 import SettingsHeader from "./SettingsHeader";
+import Avatar from "../../components/avatar/Avatar";
 
 const SettingsPage = (props) => {
-  const darkMode = localStorage.getItem("dark");
-  const boolValue = darkMode === "true";
+  const [darkMode, setDarkMode] = React.useState(getInitialMode());
+  React.useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(darkMode));
+  }, [darkMode]);
 
-  //   function handleChange(event) {
-  //     // Here, we invoke the callback with the new value
-  //     if (props.value == true) {
-  //       props.onChange(false);
-  //     } else {
-  //       props.onChange(true);
-  //     }
-  //     // props.onChange(event.target.value);
-  //   }
+  function getInitialMode() {
+    const isReturningUser = "dark" in localStorage;
+    const savedMode = JSON.parse(localStorage.getItem("dark"));
+    const userPrefersDark = getPrefColorScheme();
 
-  //   function valami() {
-  //     props.mode == true ? props.mode == false : props.mode == true;
-  //   }
+    if (isReturningUser) {
+      return savedMode;
+    } else if (userPrefersDark) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function getPrefColorScheme() {
+    if (!window.matchMedia) return;
+  }
 
   return (
-    <div>
+    <div
+      style={{ height: "100%" }}
+      className={darkMode ? "dark-mode" : "light-mode"}
+    >
       <SettingsHeader urlToAvatar="https://www.pexels.com/hu-hu/foto/allat-aranyos-bajusz-belfoldi-1314550/" />
-      <div className="settings-container">
+      <div className="setting-page-avatar">
+        <Avatar />
+      </div>
+
+      <div className=" settings-container">
         <div className="toggle-settings-container">
           <span className="light-mode-settings">Light/dark mode</span>
           <span className="toggle-container">
-            <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
+            <span style={{ color: darkMode ? "grey" : "yellow" }}>☀</span>
             <span className="toggle">
               <input
-                defaultChecked={darkMode}
-                // onChange={() => valami()}
-                // onChange={handleChange}
-                //  onChange={() => setDarkMode((prevMode) => !prevMode)}
+                checked={darkMode}
+                onChange={() => setDarkMode((prevMode) => !prevMode)}
                 id="checkbox"
                 className="checkbox"
                 type="checkbox"
               />
               <label htmlFor="checkbox" />
             </span>
-            <span style={{ color: darkMode ? "slateblue" : "grey" }}>☾</span>
-            {/* <button onClick={() => setDarkMode(prevMode => !prevMode)}>
-          Toggle
-        </button> */}
+            <span style={{ color: darkMode ? "yellow" : "grey" }}>☾</span>
           </span>
         </div>
 
