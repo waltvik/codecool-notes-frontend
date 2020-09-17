@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import "./notecard.css";
-import ReactPlayer from "react-player";
 
 const NoteCard = (props) => {
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("dark"))
-  );
+  const [darkMode] = useState(JSON.parse(localStorage.getItem("dark")));
 
   return (
     <div
@@ -13,7 +10,7 @@ const NoteCard = (props) => {
         darkMode ? "dark-mode card-wrapper" : "light-mode card-wrapper"
       }
     >
-      <div className="card-title">note title</div>
+      <div className="card-title">{props.title}</div>
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
         tenetur rerum sapiente ducimus unde cupiditate impedit deserunt fugit
@@ -23,10 +20,11 @@ const NoteCard = (props) => {
 
       <div className="card-footer">
         <div className="card-footer-bottom">
-          <span>user</span> | <span>when</span>
+          <span>{props.user}</span> | <span>{props.time}</span>
         </div>
         <div className="card-footer-bottom">
-          <span className="primary-color">module</span> | <span>week</span>
+          <span className="primary-color">{props.module}</span> |{" "}
+          <span>{props.week}</span>
         </div>
       </div>
     </div>

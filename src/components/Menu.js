@@ -9,7 +9,6 @@ import {
   LeftOutlined,
   SearchOutlined,
   HomeOutlined,
-  FireOutlined,
 } from "@ant-design/icons";
 import avatar from "./avatar/avatar.jpg";
 
@@ -35,9 +34,7 @@ const Menu = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("dark"))
-  );
+  const [darkMode] = useState(JSON.parse(localStorage.getItem("dark")));
 
   return (
     <div

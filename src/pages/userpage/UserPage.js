@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./userpage.css";
 import NoteCard from "../../components/notecard/NoteCard";
-import ModuleBar from "../../components/module/ModuleBar";
 import Menu from "../../components/Menu";
 import { Link } from "react-router-dom";
 

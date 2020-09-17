@@ -1,21 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./modulepage.css";
 import NoteCard from "../../components/notecard/NoteCard";
 import ModuleBar from "../../components/module/ModuleBar";
 import Menu from "../../components/Menu";
-import Avatar from "../../components/avatar/Avatar";
+import axios from "axios";
 
 const ModulePage = () => {
   // TODO: get module notes from back-end
 
   // TODO: get filtered notes from back-end
 
-  var str = window.location.href;
-  var module = str.substring(str.indexOf("3000/") + 5);
+  const [modulState, setModulState] = useState([]);
 
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("dark"))
-  );
+  var str = window.location.href;
+
+  var lastslashindex = str.lastIndexOf("/");
+  var module = str.substring(lastslashindex + 1);
+
+  const [darkMode] = useState(JSON.parse(localStorage.getItem("dark")));
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url:
+        `http://localhost:8762/notes-service/note/module/` +
+        module.toUpperCase(),
+
+      withCredentials: true,
+    }).then(function (response) {
+      //handle success
+      setModulState(response.data);
+      console.log("noteees " + response.data[0]);
+    });
+  }, [module]);
 
   return (
     <div
@@ -34,17 +51,17 @@ const ModulePage = () => {
         </div>
       </div>
       <div className="note-card-wrapper">
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
-        <NoteCard></NoteCard>
+        {modulState.map((card) => (
+          <NoteCard
+            key={card.noteId}
+            title={card.noteTitle}
+            url={card.noteUrl}
+            week={card.week}
+            time={card.submissionTime}
+            module={card.module}
+            user={card.username}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./welcome.css";
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const WelcomePage = () => {
   const [username, setUserName] = useState("");
@@ -35,7 +35,7 @@ const WelcomePage = () => {
       });
   };
 
-  const [darkMode, setDarkMode] = React.useState(getInitialMode());
+  const [darkMode] = React.useState(getInitialMode());
   React.useEffect(() => {
     localStorage.setItem("dark", JSON.stringify(darkMode));
   }, [darkMode]);

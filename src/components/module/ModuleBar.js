@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 const ModuleBar = (props) => {
   var str = window.location.href;
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("dark"))
-  );
+  const [darkMode] = useState(JSON.parse(localStorage.getItem("dark")));
   return (
     <div
       className={

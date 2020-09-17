@@ -1,7 +1,7 @@
 import React from "react";
 import "./settings.css";
 import { useHistory } from "react-router-dom";
-import { ArrowLeftOutlined, LeftOutlined } from "@ant-design/icons";
+import { LeftOutlined } from "@ant-design/icons";
 
 const Header = (props) => {
   let history = useHistory();
@@ -9,10 +9,10 @@ const Header = (props) => {
   function goBack() {
     history.goBack();
   }
-
+  /*
   function goHome() {
     history.push("/");
-  }
+  } */
 
   return (
     <div className="header">

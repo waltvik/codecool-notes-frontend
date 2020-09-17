@@ -29,7 +29,7 @@ const RegistrationPage = () => {
       });
   };
 
-  const [darkMode, setDarkMode] = React.useState(getInitialMode());
+  const [darkMode] = React.useState(getInitialMode());
   React.useEffect(() => {
     localStorage.setItem("dark", JSON.stringify(darkMode));
   }, [darkMode]);
