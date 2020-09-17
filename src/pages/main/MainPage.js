@@ -14,7 +14,7 @@ const MainPage = () => {
       withCredentials: true,
     }).then(function (response) {
       //handle success
-      console.log("itt a kibaszott almaa " + response.data);
+      console.log("itt az almaa " + response.data);
     });
   }, []);
 
