@@ -49,6 +49,120 @@
   display: none;
 }
 
+.menu-subbutton {
+  border: none;
+  width: 35px;
+  height: 35px;
+  font-size: 23px;
+}
+
+/* modal */
+
+.modal-container {
+  width: 90vw;
+  height: 80vh;
+  border-radius: 25px;
+  background-color: bisque;
+
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+}
+
+.modal-image-url {
+  background-color: #575757;
+}
+
+.modal-content-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  /* margin-top: 50px; */
+  width: 90%;
+  margin-bottom: 1em;
+  margin: auto;
+
+  /* align-content: space-evenly; */
+}
+
+.modal-item {
+  width: 90%;
+  background-color: #de541e;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* dropdown */
+
+.dropdown {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.dropdown2 {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.dropdown-header {
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-body {
+  padding: 5px;
+  border-top: 1px solid #e5e8ec;
+  display: none;
+}
+
+.dropdown-body.open {
+  display: block;
+  z-index: 3;
+}
+
+.dropdown-item {
+  padding: 10px;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+}
+
+.dropdown-item-dot {
+  opacity: 0;
+  color: #91a5be;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-item-dot.selected {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 13px;
+  color: #91a5be;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+
+.icon.open {
+  transform: rotate(90deg);
+}
+
+.dropdown-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
 @media only screen and (min-width: 768px) {
   .menu-container {
     position: fixed;
@@ -93,6 +207,19 @@
     left: 0;
     top: 0;
     position: absolute;
+  }
+
+  .menu-subbutton {
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+  }
+
+  .dropdown-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 700px;
   }
 }
 
@@ -162,5 +289,12 @@
     left: -5px;
     top: 25px;
     position: absolute;
+  }
+
+  .menu-subbutton {
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
   }
 }

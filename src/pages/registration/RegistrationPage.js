@@ -124,7 +124,7 @@ const RegistrationPage = () => {
             }}
             onClick={() => onRegistration()}
           >
-            log in
+            register
           </button>
         </div>
 
